@@ -10,13 +10,17 @@ user = request.getParameter("user");
 i.user = user;
 senha = Integer.parseInt(request.getParameter("senha"));
 i.senha1 = senha;
-i.verificar(user);
 id = i.id;
+if (i.verificar(user)){
 if (i.resposta == 1) {
 	request.setAttribute("datename", user);
 	response.sendRedirect("area_cliente.jsp");
 	
 } else {
+	response.sendRedirect("Index.jsp");
+}
+}
+else {
 	response.sendRedirect("Index.jsp");
 }
 %>

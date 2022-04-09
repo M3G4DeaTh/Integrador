@@ -15,11 +15,9 @@ public class bikes {
 	public Integer j = 1;
 	public Integer resposta;
 	public String bike;
-	public Integer a;
-	public Integer b;
-	public Integer c;
-	public Integer d;
-	public Integer e;
+	public Integer a = 0;
+	public Integer b = 0;
+	public Integer c = 0;
 	public boolean guardar(String user) {
 		boolean resu = false;
 		try {
@@ -64,6 +62,7 @@ public class bikes {
 			}
 			else {
 				userv = "nada";
+				return false;
 			}
 			id = result.getInt("id");
 			senhav = result.getInt("senha");
@@ -113,12 +112,11 @@ public class bikes {
 			Class.forName("com.mysql.jdbc.Driver");
 			String usuario="root";
 			String senha="010203";
-			String url = "jdbc:mysql://localhost/Usuarios";
+			String url = "jdbc:mysql://localhost/usuarios";
 			java.sql.Connection conn = DriverManager.getConnection(url, usuario, senha);
-			String Sql = "insert "
-					+ "users(bikes)"
-					+ "values(?)"
-					+ " where usuario= ?";
+			String Sql = "update users "
+					+ "set bikes = ? "
+					+ "where Usuario=?";
 			PreparedStatement comando = (PreparedStatement) conn.prepareStatement(Sql);
 			comando.setString(1, bike);
 			comando.setString(2, user);
@@ -141,7 +139,7 @@ public class bikes {
 			java.sql.Connection conn = DriverManager.getConnection(url, usuario, senha);
 			String Sql = "select bikes "
 					+ "from users "
-					+ "where usuario= ?";
+					+ "where Usuario= ?";
 			PreparedStatement comando = (PreparedStatement) conn.prepareStatement(Sql);
 			comando.setString(1, user);
 			resu = comando.execute();
@@ -149,19 +147,18 @@ public class bikes {
 			result.next();
 			if (result.getString("bikes") != null) {
 				bike = result.getString("bikes");
-			}
-			else {
-				bike = "";
-			}
+			}else {
+				return false;
+			}	
 			char[] bike_a = bike.toCharArray();
 			for (i=1;i < bike_a.length; i++) {
-				if (bike_a[i] == 'a' || bike_a[i] == 'A') {
+				if (bike_a[i] == 'a') {
 					a ++;
 				}
-				else if(bike_a[i] == 'b' || bike_a[i] == 'B'){
+				else if (bike_a[i] == 'b') {
 					b ++;
 				}
-				else if(bike_a[i] == 'c' || bike_a[i] == 'C'){
+				else if (bike_a[i] == 'c') {
 					c ++;
 				}
 			}

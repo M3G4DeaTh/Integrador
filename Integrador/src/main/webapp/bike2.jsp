@@ -1,11 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="main.bikes"%>
-<%
-bikes i = new bikes();
-String user = i.user;
-i.aluga(user);
-%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,16 +13,12 @@ i.aluga(user);
 		<h3>Biklismo</h3>
 		<nav>
 			<ul class="nav__links">
-				<li><a href="Index.jsp">Inicio</a></li>
+				<li><a href="area_cliente.jsp">Inicio</a></li>
 				<li><a href="Contatos.jsp">Contatos</a></li>
-				<li><a href="#">Help</a></li>
+				<li><a href="Help.jsp">Help</a></li>
 			</ul>
 		</nav>
 	</header>
-	<h3 class="title">
-		Olá
-		<%=user%>
-	</h3>
 	<form action="aluga.jsp" method="post">
 		<table>
 			<tr>
@@ -39,8 +30,18 @@ i.aluga(user);
 				<td><img
 					src="https://static.netshoes.com.br/produtos/bicicleta-aro-24-rebaixada-18-marchas-aco-carbono-ultra-bikes/14/ISL-0026-014/ISL-0026-014_zoom1.jpg?ts=1611395738"
 					alt="bike2" width=250px height=250px></td>
+				</tr>
+			<tr>
 				<td>Qntd.</td>
 				<td><input type="text" name="bike2" required></td>
+			</tr>
+			<tr>
+			<td> Usuario </td>
+			<td><input type="text" name="user" required></td>
+			</tr>
+			<tr>
+			<td>Senha</td>	
+			<td><input type="password" name="senha" required></td>
 			</tr>
 			<tr>
 				<th colspan="2"><input class="button" type="submit" name="env"

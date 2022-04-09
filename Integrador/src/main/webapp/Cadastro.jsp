@@ -28,7 +28,7 @@
 			<tr><td> Usuario </td>
 			<td><input type="text" name="user" required></td></tr>
 			<tr><td> Senha </td>
-			<td><input type="text" name="senha" required></td></tr>
+			<td><input type="password" name="senha" required></td></tr>
 			<tr><th colspan="2"><input class="button" type="submit" name="env" value="Cadastrar"></th></tr>
 		</table>
 	</form>

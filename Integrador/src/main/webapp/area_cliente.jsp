@@ -1,11 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="main.bikes"%>
-<%
-bikes i = new bikes();
-Object Userr = request.getAttribute("dataname");
-String user = String.valueOf(Userr);
-%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,16 +13,13 @@ String user = String.valueOf(Userr);
 		<h3>Biklismo</h3>
 		<nav>
 			<ul class="nav__links">
-				<li><a href="Index.jsp">Inicio</a></li>
+				<li><a href="area_cliente.jsp">Inicio</a></li>
 				<li><a href="Contatos.jsp">Contatos</a></li>
-				<li><a href="#">Help</a></li>
+				<li><a href="Help.jsp">Help</a></li>
 			</ul>
 		</nav>
 	</header>
-	<h3 class="title">
-		Olá
-		<%=user%>
-	</h3>
+	<br>
 	<table>
 		<tr>
 			<td class="bike"><a href="bike1.jsp"> <img
