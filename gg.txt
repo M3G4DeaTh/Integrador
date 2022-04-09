@@ -1,0 +1,13 @@
+https://github.com/M3G4DeaTh/Integrador/tree/main/Integrador/src/main
+Observações: Projeto em fase de desenvolvimento, o funcionamento de alugar a bicicleta nao esta disponivel ainda, o cadastro e o login estao funcionais.
+Para criação do banco de dados utilizei esse script a seguir:
+create database usuarios;
+use usuarios;
+create table users(
+id int auto_increment,
+Usuario varchar(20),
+senha int,
+bikes varchar(5),
+primary key(id)
+) auto_increment =1;
+Alguns requisitos de segurança nao foram aplicados, como a senha ainda não esta formatada corretamente.
