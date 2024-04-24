@@ -1,3 +1,2 @@
 # Integrador
-Projeto biklismo (em fase de desenvolvimento)
-Este projeto está em fase de testes e adaptações, ainda não se adequa a protocolos de segurança e não é garantido o funcionamento completo.
+This is a java(JSP) project, its a showcase of bicicles that the user can rent, the main idea of the project its to be a bicicle rent page.
